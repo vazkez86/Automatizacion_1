@@ -5,15 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello Seat");
+        //En esta linea debes modificar la ruta donde esté instalado el chromedriver
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\vazke\\Desktop\\selenium_prueba\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
@@ -38,7 +37,7 @@ public class Main {
                 */
             //click en Mujer
             driver.findElement(By.xpath("//div[@id=\"page\"]//span[contains(text(),'Mujer')]")).click();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            Thread.sleep(1500);
 
             //click segundo zapato
             driver.findElement(By.xpath("//*[@id=\"product8180\"]/div/div/a[2] ")).click();
